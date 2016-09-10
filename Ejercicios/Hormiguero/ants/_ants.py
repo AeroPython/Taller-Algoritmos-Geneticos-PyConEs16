@@ -236,7 +236,7 @@ class Hormiga:
                          (1 - self.distance_weight) * (0.1 + posible_ferom))
         probabilities = probabilities / np.sum(probabilities)
         indexes = np.arange(len(self.city_list))
-        new_city_index = np.random.choice(indexes, 1, p = probabilities)
+        new_city_index = np.random.choice(indexes, 1, p = probabilities)[0]
         self.position = self.city_list.pop(new_city_index)
         self.route.append(self.position)
         
